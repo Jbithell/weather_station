@@ -49,14 +49,15 @@ This is a direct copy of the Raspberry Pi Foundations' code, with a minor edit t
 
 ## interrupt_daemon.py
 
-This is a direct copy of the Raspberry Pi Foundations' code.
-Note, 
+This is a direct copy of the Raspberry Pi Foundations' code - but with the calibration corrected for the wind speed
 
-* the rain gauge uses BCM pin 6
-* the wind speed gauge uses BCM pin 5
+## Wind Speed Gauge
+Ground one wire
+Other one into GPIO5
 
-These can be changed in the setup() function.
+Pins can be changed in the setup() function.
 
+## Starting
 For the sensors to work this must be called (and runs in the background using the following command:
 
     python3 interrupt_daemon.py start

@@ -5,7 +5,7 @@ import time
 import interrupt_client
 import wind_direction
 
-FREQUENCY = 60 * 5  #Record data to thingspeak at this frequency
+FREQUENCY = 5  #Record data to thingspeak at this frequency
 #wind_dir = wind_direction.wind_direction(adc_channel = 7, config_file="wind_direction.json")
 interrupts = interrupt_client.interrupt_client(port = 49501)
 if __name__ == "__main__":

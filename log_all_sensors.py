@@ -9,12 +9,16 @@ FREQUENCY = 2  #Record data to thingspeak at this frequency
 #wind_dir = wind_direction.wind_direction(adc_channel = 7, config_file="wind_direction.json")
 interrupts = interrupt_client.interrupt_client(port = 49501)
 if __name__ == "__main__":
+	latestreading = 0
 	while True:
 		#wind_average = wind_dir.get_value(10) #ten seconds
 		#print(wind_average)
-		print("Speed " + str(interrupts.get_wind()))
-		print("Gusting " + str(interrupts.get_wind_gust()))
-		interrupts.reset()
+		if (interrupts.get_wind() >0):
+		    print("Speed " + str(interrupts.get_wind()))
+		    print("Gusting " + str(interrupts.get_wind_gust()))
+		    interrupts.reset()
+		    print(time.time()-latestreading)
+		    latestreading = time.time()
 		#time.sleep(FREQUENCY)
 		
 	

@@ -32,7 +32,7 @@ class interrupt_client(object):
     def reset(self):
         self.client.sendall(b"RESET")
         assert(self.get_data() == "OK")
-        print("Counts reset")
+        ##print("Counts reset")
         
     def __del__(self):
         self.client.sendall("BYE".encode('utf-8'))

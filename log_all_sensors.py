@@ -15,6 +15,6 @@ if __name__ == "__main__":
 		print("Speed " + str(interrupts.get_wind()))
 		print("Gusting " + str(interrupts.get_wind_gust()))
 		interrupts.reset()
-		time.sleep(FREQUENCY)
+		#time.sleep(FREQUENCY)
 		
 	

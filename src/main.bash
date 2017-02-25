@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 
-python3 Daemon/interrupt_daemon.py start
+python3 src/Daemon/interrupt_daemon.py start
 
-python3 main.py
+python3 src/main.py

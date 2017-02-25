@@ -1,5 +1,5 @@
 FROM resin/%%RESIN_MACHINE_NAME%%-python
-
+#For pushing to resin.io
 RUN apt-get update && apt-get install -yq python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app

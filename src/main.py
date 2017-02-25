@@ -2,8 +2,8 @@
 
 #import interrupt_client, MCP342X, wind_direction, HTU21D, bmp085, tgs2600, ds18b20_therm
 import time
-import interrupt_client
-import wind_direction
+import InterruptClient
+import WindDirection
 
 #wind_dir = wind_direction.wind_direction(adc_channel = 7, config_file="wind_direction.json")
 interrupts = interrupt_client.interrupt_client(port = 49501)

@@ -86,6 +86,9 @@ class wind_direction(object):
             sin_sum += math.sin(r)
             cos_sum += math.cos(r)
 
+        if (len(angles) <1):
+            return False
+
         flen = float(len(angles))
         s = sin_sum / flen
         c = cos_sum / flen
@@ -119,4 +122,4 @@ class wind_direction(object):
 
 if __name__ == "__main__":
     obj = wind_direction(7, "wind_direction.json")
-    print(obj.get_value(10))
+    print(obj.get_value(2))

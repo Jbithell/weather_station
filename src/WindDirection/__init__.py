@@ -122,5 +122,5 @@ class wind_direction(object):
         return self.get_average(data)
 
 if __name__ == "__main__":
-    obj = wind_direction(100, "wind_direction.json")
-    print(obj.get_value(2))
+    obj = wind_direction(7, "wind_direction.json")
+    print(obj.get_value(20))

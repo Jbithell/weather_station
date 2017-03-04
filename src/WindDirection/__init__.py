@@ -112,7 +112,6 @@ class wind_direction(object):
             if direction is not None:  # keep only good measurements
                 if (round(adc_value,5) != 0.00098): #This wierd value that always comes up
                     data.append(direction)
-                    print(adc_value)
             elif (adc_value == 0):
                 continue
             else:

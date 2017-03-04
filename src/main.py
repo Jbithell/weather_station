@@ -5,6 +5,12 @@ import time
 import InterruptClient
 import WindDirection
 
+import RPi.GPIO as GPIO
+GPIO.setup(21, GPIO.OUT)
+GPIO.output(21, GPIO.HIGH)
+time.sleep(1236549543542354368)
+
+
 wind_dir = WindDirection.wind_direction(adc_channel = 7, config_file="wind_direction.json")
 interrupts = InterruptClient.interrupt_client(port = 49501)
 if __name__ == "__main__":

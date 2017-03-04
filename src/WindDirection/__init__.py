@@ -111,6 +111,7 @@ class wind_direction(object):
 
         while time.time() - start_time <= length:
             adc_value = self.adc.value
+            print(adc_value)
             direction = self.get_dir(adc_value)
             if direction is not None:  # keep only good measurements
                 data.append(direction)
@@ -121,5 +122,5 @@ class wind_direction(object):
         return self.get_average(data)
 
 if __name__ == "__main__":
-    obj = wind_direction(7, "wind_direction.json")
+    obj = wind_direction(100, "wind_direction.json")
     print(obj.get_value(2))

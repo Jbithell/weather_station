@@ -49,8 +49,8 @@ def upload_data(windspeed, winddirectioncompass, winddirectiondegrees):
     except requests.exceptions.Timeout as e:
         print("TIMEOUT ERROR")
         return False
-    except requests.exceptions.RetryError as e:
-        print("RETRY ERROR")
+    except requests.exceptions.MissingSchema as e:
+        print("URL ERROR - URL WAS PROBABLY NOT SET CORRECTLY IN SETTINGS!")
         return False
     except requests.exceptions.RequestException as e:
         print("**************MAJOR EXCEPTION - SOME KIND OF HTTP PROBLEM**************")

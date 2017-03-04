@@ -86,9 +86,6 @@ class wind_direction(object):
             sin_sum += math.sin(r)
             cos_sum += math.cos(r)
 
-        if (len(angles) <1):
-            return False
-
         flen = float(len(angles))
         s = sin_sum / flen
         c = cos_sum / flen
@@ -111,17 +108,14 @@ class wind_direction(object):
 
         while time.time() - start_time <= length:
             adc_value = self.adc.value
-            if (adc_value > 0):
-                print(adc_value)
-                time.sleep(1)
-            #direction = self.get_dir(adc_value)
-            #if direction is not None:  # keep only good measurements
-            #    data.append(direction)
-            #elif adc_value != 0:
-            #    print("Could not determine wind direction for ADC reading: %s" % adc_value)
+            direction = self.get_dir(adc_value)
+            if direction is not None:  # keep only good measurements
+                data.append(direction)
+            else:
+                print("Could not determine wind direction for ADC reading: %s" % adc_value)
 
         return self.get_average(data)
 
 if __name__ == "__main__":
     obj = wind_direction(7, "wind_direction.json")
-    print(obj.get_value(20))
+    print(obj.get_value(10))

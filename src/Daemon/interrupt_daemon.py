@@ -85,7 +85,7 @@ class interrupt_daemon(object):
         
     def setup(self):
         self.rain = rainfall_interrupt_watcher(0.2794, 6, 300) #Maplin rain gauge = 0.2794 ml per bucket tip, was 27 on prototype
-        self.wind = wind_speed_interrupt_watcher(9.0, 5, 1) #Maplin anemometer = radius of 9 cm, was 17 on prototype
+        self.wind = wind_speed_interrupt_watcher(9.0, 21, 1) #Maplin anemometer = radius of 9 cm, was 17 on prototype
         
         try:
             self.skt = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

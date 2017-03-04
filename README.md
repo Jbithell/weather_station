@@ -53,7 +53,7 @@ This is a direct copy of the Raspberry Pi Foundations' code - but with the calib
 
 ## Wind Speed Gauge
 Ground one wire
-Other one into GPIO5
+Other one into GPIO21
 
 Pins can be changed in the setup() function.
 

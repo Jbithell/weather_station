@@ -113,11 +113,9 @@ class wind_direction(object):
             adc_value = self.adc.value
             direction = self.get_dir(adc_value)
             if direction is not None:  # keep only good measurements
-                print(adc_value)
                 data.append(direction)
-            else:
-                pass
-                #print("Could not determine wind direction for ADC reading: %s" % adc_value)
+            elif adc_value is not 0:
+                print("Could not determine wind direction for ADC reading: %s" % adc_value)
 
         return self.get_average(data)
 

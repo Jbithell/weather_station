@@ -111,6 +111,7 @@ class wind_direction(object):
             direction = self.get_dir(adc_value)
             if direction is not None:  # keep only good measurements
                 data.append(direction)
+                print(adc_value)
             elif (adc_value == 0):
                 continue
             else:

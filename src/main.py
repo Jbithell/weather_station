@@ -17,7 +17,7 @@ GPIO.setup(26, GPIO.OUT) #Setup LED
 GPIO.output(26,0) #Setup LED
 
 if __name__ == "__main__":
-    lastwind = 0
+    lastwind = 1
     while True:
         GPIO.output(26, 1)
         time.sleep(1/lastwind)

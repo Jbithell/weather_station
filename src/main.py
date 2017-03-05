@@ -25,7 +25,7 @@ if __name__ == "__main__":
         #wind_average = wind_dir.get_value(5) #Time to get average for in seconds
         #print(wind_average)
         if (interrupts.get_wind() >0):
-            print(interrupts.cd.get_wind()*0.277778) #Speed in M/s (*1.9438460492 for Knots)
+            print(interrupts.get_wind()*0.277778) #Speed in M/s (*1.9438460492 for Knots)
             interrupts.reset()
             #interrupts.get_wind_gust() gives you the highest value in last 5 seconds - assuming you don't reset interrupts
 

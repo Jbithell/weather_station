@@ -9,11 +9,11 @@ import WindDirection
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(26, GPIO.OUT)
-GPIO.output(26, GPIO.HIGH)
+GPIO.output(26,0)
 while True:
-	GPIO.output(26, GPIO.HIGH)
+	GPIO.output(26, 1)
 	time.sleep(0.5)
-	GPIO.output(26, GPIO.LOW)
+	GPIO.output(26, 0)
 	time.sleep(0.5)
 
 

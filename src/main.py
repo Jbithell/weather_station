@@ -4,10 +4,14 @@
 import time
 import InterruptClient
 import WindDirection
-
-
 import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BCM)
+
+
+
+
+wind_dir = WindDirection.wind_direction(adc_channel = 1, config_file="wind_direction.json")
+interrupts = InterruptClient.interrupt_client(port = 49501)
+
 GPIO.setup(26, GPIO.OUT)
 GPIO.output(26,0)
 while True:
@@ -16,9 +20,6 @@ while True:
 	GPIO.output(26, 0)
 	time.sleep(0.5)
 
-
-wind_dir = WindDirection.wind_direction(adc_channel = 1, config_file="wind_direction.json")
-interrupts = InterruptClient.interrupt_client(port = 49501)
 if __name__ == "__main__":
 	while True:
 		#wind_average = wind_dir.get_value(5) #Time to get average for in seconds

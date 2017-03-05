@@ -10,7 +10,11 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(26, GPIO.OUT)
 GPIO.output(26, GPIO.HIGH)
-time.sleep(1236549543542354368)
+while True:
+	GPIO.output(26, GPIO.HIGH)
+	time.sleep(0.5)
+	GPIO.output(26, GPIO.LOW)
+	time.sleep(0.5)
 
 
 wind_dir = WindDirection.wind_direction(adc_channel = 1, config_file="wind_direction.json")
